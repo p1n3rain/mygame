@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/wrap_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gameFrame"
+        android:orientation="vertical"></LinearLayout>
+
+
+<!--아랫부분 조이스틱, 총알, 번개 구현-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/control_layout"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="25dp"
+        >
+
+        <io.github.controlwear.virtual.joystick.android.JoystickView
+            android:id="@+id/joyStick"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/round_button_shape"
+            app:JV_buttonColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="right"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="10dp">
+                <ImageButton
+                    android:id="@+id/reloadBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/round_button_shape"
+                    android:src="@drawable/ic_baseline_autorenew_24"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/specialShotBtn"
+                    android:background="@drawable/round_button_shape"
+                    android:src="@drawable/ic_baseline_flash_on_24"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:foregroundGravity="center"
+                    android:layout_marginBottom="10dp"/>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bulletCount"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:autoSizeTextType="none"
+                    android:textSize="18sp"/>
+
+                <ImageButton
+                    android:id="@+id/fireBtn"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/round_button_shape"
+                    android:padding="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/shot_001" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+<!--윗부분 만들기 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="30dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="left|center_vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Score :"
+                android:textColor="@color/white"
+                android:fontFamily="@font/maplestory_bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/score"
+                android:text=""
+                android:autoSizeTextType="none"
+                android:fontFamily="@font/maplestory_bold"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/lifeFrame"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_favorite_24"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_favorite_24"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_favorite_24"/>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/pauseBtn"
+                android:src="@drawable/ic_baseline_pause_circle_outline_24"
+                android:backgroundTint="@color/black"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
